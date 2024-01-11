@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 
-// Controllers
 const {
   login,
   loginGoogle,
@@ -13,7 +12,6 @@ const {
   refreshToken,
   resendOtpEmail,
 } = require("../controllers/auth");
-const { onlyAdmin, protect } = require("../middleware/auth");
 
 router.route("/register").post(register);
 router.route("/registerGoogle").post(registerGoogle);

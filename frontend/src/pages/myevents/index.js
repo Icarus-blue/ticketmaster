@@ -364,7 +364,7 @@ const MyEvents = () => {
             }}
           >
 
-            <div>
+            {/* <div>
               <Typography variant="h5">My Events</Typography>
               <p>
                 Only TM/LN Events | Only AXS Events | Show All Events | Clear Filter
@@ -373,21 +373,12 @@ const MyEvents = () => {
                 List My Blocked Tickets
               </p>
 
-            </div>
+            </div> */}
             <Box gap={1} display="flex">
-              {/* <Button
-                variant="contained"
-                color="error"
-                onClick={() => {
-                  setOpenDialog({ ...openDialog, delete: true });
-                }}
-                disabled={!rowSelectionModel.length}
-              >
-                Delete
-              </Button> */}
+            
               <Button
                 variant="contained"
-                onClick={() => navigate("/gym/create")}
+                onClick={() => navigate("/myevents/new")}
               >
                 Create
               </Button>

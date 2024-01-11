@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
 const User = require("../models/User");
 const Profile = require("../models/Profile");
-const Chat = require("../models/Chat");
-const Message = require("../models/Message");
-const Wallet = require('../models/Wallet');
+
 
 const connectDB = async () => {
   try {
@@ -13,14 +11,14 @@ const connectDB = async () => {
     });
     const admin = await User.findOne({ role: "admin" });
     if (!admin) {
-      const user = await User.create({
+      const user = await User.create({ 
         fullname: "monna",
         role: "admin",
         isActive: true,
         skipOnboarding: true,
         email: process.env.ADMIN_EMAIL,
         password: process.env.ADMIN_PASSWORD,
-      });
+      }); 
 
       const profile = await Profile.create({
         user: user._id,

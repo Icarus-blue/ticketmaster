@@ -14,6 +14,7 @@ import EditLiveDrop from "../pages/livedrops/EditLiveDrop";
 import Livedropes from "../pages/livedrops";
 import MyEvents from "../pages/myevents";
 import Faqs from "../pages/faqs/Faqs";
+import CreateEvent from "../pages/myevents/CreateEvent";
 
 export const routes = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ export const routes = createBrowserRouter([
   {
     path: "/myevents",
     element: <PrivateLayout children={<MyEvents />} />,
+  },
+  {
+    path: "/myevents/new",
+    element: <PrivateLayout children={<CreateEvent />} />,
   },
 
 

@@ -8,24 +8,18 @@ import {
   Stack,
   TextField,
 } from "@mui/material";
-import { useForm, Controller } from "react-hook-form";
-import { apis } from "../../apis";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
-import { initGyms } from "../../redux/actions/gymActions";
 import { useState } from "react";
 import { useAuth } from "../../hooks/useAuth";
 
-const CreateGymPage = () => {
+const CreateEvent = () => {
   const { token } = useAuth()
   const [url, setUrl] = useState('')
   const navigate = useNavigate();
   const {
-    register,
     formState: { isSubmitting, errors },
     handleSubmit,
-    reset,
-    control,
   } = useForm({
     defaultValues: {
       numbers: "",
@@ -99,4 +93,4 @@ const CreateGymPage = () => {
   );
 };
 
-export default CreateGymPage;
+export default CreateEvent;

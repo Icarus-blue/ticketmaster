@@ -8,7 +8,6 @@ const sendEmail = require("../utils/sendEmail");
 // @desc    Login user
 exports.login = async (req, res, next) => {
   const { email, password } = req.body;
-  console.log(password);
   if (!email || !password) {
     return next(new ErrorResponse("Please provide an email and password", 400));
   }
@@ -74,7 +73,6 @@ exports.loginGoogle = async (req, res, next) => {
       return next(new ErrorResponse("Account Locked", 401));
     }
 
-    console.log("User Google Login->");
     sendToken(user, 200, res);
   } catch (err) {
     next(err);
@@ -83,9 +81,7 @@ exports.loginGoogle = async (req, res, next) => {
 
 // @desc    Register user
 exports.register = async (req, res, next) => {
-  console.log("resiger request data->");
   try {
-    console.log(req.body);
     const user = await User.create(req.body);
 
     // sendToken(user, 200, res);
@@ -118,9 +114,9 @@ exports.registerGoogle = async (req, res, next) => {
     await profile.save();
     user.profile = profile._id;
     await user.save();
-
+ 
     res.status(200).json({
-      success: true,
+      success: true, 
       data: "Register Successfully!",
     });
 

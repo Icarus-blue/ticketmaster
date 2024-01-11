@@ -126,24 +126,6 @@ const ProfilePage = () => {
               />
 
 
-              {/* <TextField
-                label="Website"
-                type="text"
-                defaultValue={user.name}
-                error={!!infoForm.formState.errors.name}
-                sx={{ maxWidth: 400 }}
-                disabled={!changeName}
-                helperText={
-                  infoForm.formState.errors.name &&
-                  infoForm.formState.errors.name.message
-                }
-                {...infoForm.register("name", {
-                  required: "Name is required",
-                  validate: (value) =>
-                    value !== user?.name || "Please update name.",
-                })}
-              /> */}
-
               <TextField
                 placeholder="Telegram chat ID"
                 type="text"
