@@ -3,9 +3,11 @@ import { RouterProvider } from "react-router-dom";
 import { routes } from "./router/routes";
 import { useAuth } from "./hooks/useAuth";
 import { useEffect } from "react";
-function App() {
+function App() {  
+
   const { token, logout } = useAuth();
   useEffect(() => {
+    console.log('envs', process.env.REACT_APP_BACKEND_SERVER) 
     let timer;
     const resetTimer = () => {
       clearTimeout(timer);

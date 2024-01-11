@@ -45,7 +45,7 @@ const EditUserPage = () => {
   const handleUpdateEvent = async () => {
     setIsSubmitting(true)
     try {
-      const res = await axios.put(`http://localhost:5000/events/${id}`, { ...formData }, {
+      const res = await axios.put(`${process.env.REACT_APP_BACKEND_SERVER}/events/${id}`, { ...formData }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -70,7 +70,7 @@ const EditUserPage = () => {
 
     const getEvent = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/events/${id}`, {
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_SERVER}/events/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }

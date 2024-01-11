@@ -119,7 +119,7 @@ const MyEvents = () => {
     setIsSubmitting(true)
     try {
 
-      const res = await axios.post(`http://localhost:5000/add-watch`, { ...formData, _id: openDialog?.event?._id }, {
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/add-watch`, { ...formData, _id: openDialog?.event?._id }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -151,7 +151,7 @@ const MyEvents = () => {
   useEffect(() => {
     const getEvents = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/events`, {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/events`, {
           headers: {
             'authorization': `Bearer ${token}`
           }
@@ -170,7 +170,7 @@ const MyEvents = () => {
   const handleDeleteWatch = async (id, row) => {
     try {
       console.log("selected", row)
-      const res = await axios.post(`http://localhost:5000/delete-watch`, { eventId: row._id, watchId: id }, {
+      const res = await axios.post(`${process.env.REACT_APP_BACKEND_SERVER}/delete-watch`, { eventId: row._id, watchId: id }, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

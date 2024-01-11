@@ -35,7 +35,7 @@ const ProfilePage = () => {
 
   React.useEffect(() => {
     const getProfile = async () => {
-      const res = await fetch(`http://localhost:5000/api/user/`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/api/user/`, {
         method: 'GET',
         headers: {
           'authorization': `Bearer ${token}`

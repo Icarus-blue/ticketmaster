@@ -8,7 +8,7 @@ import {
 import { enqueueSnackbar } from "notistack";
 
 export const SERVER_URL =
-  process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+  process.env.REACT_APP_BACKEND_SERVER || "http://localhost:5000";
 const axios = Axios.create({ baseURL: SERVER_URL, timeout: 10000 });
 
 axios.interceptors.request.use((config) => {

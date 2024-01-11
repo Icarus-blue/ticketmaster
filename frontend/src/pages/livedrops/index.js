@@ -120,7 +120,7 @@ const Livedropes = () => {
       if (selectedRow) data = [selectedRow._id];
       else data = rowSelectionModel;
       console.log("deleted data--", data);
-      const res = await fetch(`http://localhost:5000/events`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/events`, {
         method: 'DELETE',
         headers: {
           'authorization': `Bearer ${token}`,
@@ -142,7 +142,7 @@ const Livedropes = () => {
   useEffect(() => {
     const getDrops = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/live-drops`)
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/live-drops`)
         const data = await res.json()
         if (!data.status) return alert(data.message)
         setDrops(data?.liveDrops)

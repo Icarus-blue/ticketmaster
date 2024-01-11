@@ -28,7 +28,7 @@ const CreateEvent = () => {
 
   const handleAddEvent = async (data) => {
     try {
-      const res = await fetch(`http://localhost:5000/watch?url=${url}`, {
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_SERVER}/watch?url=${url}`, {
         headers: {
           'authorization': `Bearer ${token}`
         }
