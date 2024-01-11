@@ -38,7 +38,7 @@ const ForgotPasswordPage = () => {
           <Typography variant="p">
             Please input your email to reset your password
           </Typography>
-          <TextField
+          <TextField 
             label="Email"
             helperText={errors.email && errors.email.message}
             error={!!errors.email}

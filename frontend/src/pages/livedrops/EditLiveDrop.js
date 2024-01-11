@@ -5,29 +5,17 @@ import {
   Card,
   CardContent,
   CardHeader,
-  Dialog,
-  DialogActions,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
   Stack,
   TextField,
-  // useTheme,
-  MenuItem,
   Typography,
 } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
-import { initUsers } from "../../redux/actions/userActions";
-import { apis } from "../../apis";
 import { useEffect, useState } from "react";
-import { _roles } from "../../constants/constants";
 import axios from "axios";
 import { useAuth } from "../../hooks/useAuth";
 
 const EditUserPage = () => {
-  const [user1, setUser1] = useState(null);
-  const deleteForm = useForm();
   const params = useParams()
   const [event, setEvent] = useState(null)
   const { token } = useAuth()
@@ -40,9 +28,6 @@ const EditUserPage = () => {
   const [openDialog, setOpenDialog] = useState({
     delete: false,
   });
-  const [isDeleting, setIsDeleting] = useState(false);
-  // const theme = useTheme();
-  const { user_id } = useParams();
   const [isSubmitting, setIsSubmitting] = useState(false)
   const navigate = useNavigate();
   useEffect(() => {
@@ -51,16 +36,7 @@ const EditUserPage = () => {
       setId(params.id)
     }
   }, [params])
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-    reset,
-  } = useForm({
-    defaultValues: {
-      user1: null,
-    },
-  });
+
 
   const handleChange = (e) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
@@ -86,17 +62,6 @@ const EditUserPage = () => {
     }
   };
 
-  // const handleDeleteUser = async () => {
-  //   try {
-  //     setIsDeleting(true);
-  //     await apis.deleteUser(user1._id);
-  //     navigate(-1);
-  //   } catch (error) {
-  //     console.log(error);
-  //   } finally {
-  //     setIsDeleting(false);
-  //   }
-  // };
   const handleCloseDeleteDialog = () => {
     setOpenDialog({ ...openDialog, delete: false });
   };
@@ -122,35 +87,6 @@ const EditUserPage = () => {
 
   return (
     <Box>
-      {/* <Dialog open={openDialog.delete} onClose={handleCloseDeleteDialog}>
-        <DialogTitle>Delete User</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Are you sure to delete this User?
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Stack
-            direction="row"
-            justifyContent="flex-end"
-            spacing={1}
-            component="form"
-            onSubmit={deleteForm.handleSubmit(handleDeleteUser)}
-          >
-            <Button variant="text" onClick={handleCloseDeleteDialog}>
-              Cancel
-            </Button>
-            <LoadingButton
-              variant="contained"
-              color="error"
-              type="submit"
-              loading={deleteForm.formState.isSubmitting}
-            >
-              Delete
-            </LoadingButton>
-          </Stack>
-        </DialogActions>
-      </Dialog> */}
       <Card>
         <CardHeader title="Edit Event" />
         <CardContent>

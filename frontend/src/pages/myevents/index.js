@@ -8,30 +8,21 @@ import {
   DialogTitle,
   DialogContent,
   DialogActions,
-  DialogContentText,
   Card,
   CardContent,
   Select,
   FormControl,
   InputLabel,
   MenuItem,
-  FormGroup,
-  FormControlLabel,
   Checkbox,
   TextField
 } from "@mui/material";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { apis } from "../../apis";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
+
 import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-import { initGyms } from "../../redux/actions/gymActions";
-import dayjs from "dayjs";
 import { useAuth } from "../../hooks/useAuth";
 import * as React from 'react';
 import Collapse from '@mui/material/Collapse';
@@ -45,7 +36,6 @@ import Paper from '@mui/material/Paper';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import axios from "axios";
-import { CurrencyPound } from "@mui/icons-material";
 
 const ticketTypeOptions = [
   'Any ticket Type', 'Full price Ticket', 'Official Platinum Tickets', 'Resale'

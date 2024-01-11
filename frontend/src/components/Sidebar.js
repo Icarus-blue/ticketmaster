@@ -74,16 +74,14 @@ const Drawer = styled(MuiDrawer, {
 }));
 
 const Sidebar = () => {
-  const { products } = useSelector((state) => state.product);
   const [open, setOpen] = React.useState(true);
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, ] = React.useState(null);
   const { logout } = useAuth();
 
   const navigator = useNavigate();
   const theme = useTheme();
 
   const handleLogout = () => {
-    setAnchorEl(null);
     logout();
     store.dispatch({ type: LOGOUT });
     enqueueSnackbar({ variant: "default", message: "You have logged out." });
@@ -152,34 +150,3 @@ const Sidebar = () => {
 
 export default Sidebar;
 
-
-
-
-{/* <ListItemButton onClick={() => navigator("/gym")}>
-          <ListItemIcon>
-            <QuestionMarkIcon />
-          </ListItemIcon>
-          <ListItemText primary="FAQ" />
-        </ListItemButton> */}
-{/* 
-        <ListItemButton onClick={() => navigator("/user")}>
-          <ListItemIcon>
-            <ContactMailIcon />
-          </ListItemIcon>
-          <ListItemText primary="Contacts" />
-        </ListItemButton> */}
-
-{/* <ListItemButton onClick={() => navigator("/gym")}>
-          <ListItemIcon>
-            <AccountBalanceIcon />
-          </ListItemIcon>
-          <ListItemText primary="Payment" />
-        </ListItemButton> */}
-
-{/* 
-        <ListItemButton onClick={() => navigator("/user")}>
-          <ListItemIcon>
-            <SupportIcon />
-          </ListItemIcon>
-          <ListItemText primary="Supports" />
-        </ListItemButton> */}

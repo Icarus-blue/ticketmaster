@@ -56,24 +56,7 @@ const updateUser = (data) => axios.post("/api/user", data);
 const getUserInfor = () => axios.get("/api/user");
 const updatePassword = (data) => axios.post("/api/update-password", data);
 
-//team apis
-const updateTeam = (id, data) => axios.post(`/api/team/${id}`, data);
-const deleteTeam = (id) => axios.delete(`/api/team/${id}`);
-const createTeam = (data) => axios.post(`/api/team`, data);
-// const getTeamsInfor = () => axios.get(`/api/team`);
 
-//team invitation apis
-const addTeamMember = (data) => axios.post("/api/team-invitation", data);
-const cancelTeamInvitation = (id) => axios.delete(`/api/team-invitation/${id}`);
-const acceptTeamInvitation = (id) => axios.put(`/api/team-invitation/${id}`);
-const getTeamInvitations = () => axios.get(`api/team-invitation`);
-const switchTeam = (team_id) => axios.put(`/api/team-switch/${team_id}`);
-const removeTeamMember = (id) => axios.delete(`/api/team-member/${id}`);
-
-// const getTeamMembers = () => axios.get("/api/team-member");
-// const confirmInvitation = (hash) =>
-//   axios.put(`/api/team-invitation-confirm/${hash}`);
-// const getMyInvitations = () => axios.get(`api/team-invited`);
 
 const getConstants = () => axios.get("/api/constants");
 
@@ -86,15 +69,6 @@ const createUser = (data) => {
 };
 const deleteUser = (ids) => axios.delete(`/api/admin/user/${ids}`);
 
-//Gym
-const getGyms = () => axios.get("/api/gym");
-const getGymById = (id) => axios.get(`/api/gym/${id}`);
-const updateGymById = (id, data) => axios.post(`/api/gym/${id}`, data);
-const createGym = (data) => axios.post("/api/gym", data);
-const deleteGym = (ids) => axios.delete(`/api/gym/${ids}`);
-
-// const getImage = (url) => axios.get(url);
-
 export const apis = {
   login,
   register,
@@ -105,26 +79,10 @@ export const apis = {
   updateUser,
   getUserInfor,
   updatePassword,
-  updateTeam,
-  deleteTeam,
-  addTeamMember,
-  cancelTeamInvitation,
-  acceptTeamInvitation,
-  getTeamInvitations,
-  createTeam,
-  switchTeam,
-  removeTeamMember,
   getConstants,
-
   getUsers,
   createUser,
   getUserById,
   updateUserById,
   deleteUser,
-
-  getGyms,
-  createGym,
-  getGymById,
-  updateGymById,
-  deleteGym,
 };

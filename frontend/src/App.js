@@ -27,7 +27,6 @@ function App() {
   useEffect(() => {
     const initAuth = async () => {
       try {
-        // await getUserInfor(logout);
       } catch (err) {
       }
     };

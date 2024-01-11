@@ -31,7 +31,7 @@ const LoginPage = () => {
       login(res.data.tokens.accessToken);
       const redirectTo = searchParams.get("redirect");
       if (redirectTo === null || redirectTo === undefined) {
-        navigate("/dashboard");
+        navigate("/dashboard/overview");
       } else {
         navigate(decodeURIComponent(redirectTo));
       }
@@ -40,7 +40,7 @@ const LoginPage = () => {
     }
   };
 
-  if (tokens) return <Navigate to="/dashboard" />;
+  if (tokens) return <Navigate to="/dashboard/overview" />;
   else
     return (
       <Box maxWidth={400} minWidth={400}>

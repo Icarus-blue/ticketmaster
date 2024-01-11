@@ -14,16 +14,9 @@ import {
 } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { useEffect, useState } from "react";
-import { apis } from "../../apis";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import { useForm } from "react-hook-form";
 import { LoadingButton } from "@mui/lab";
-import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-
-import { initUsers } from "../../redux/actions/userActions";
-import dayjs from "dayjs";
 import { useAuth } from "../../hooks/useAuth";
 import { Edit } from "@mui/icons-material";
 
@@ -37,7 +30,6 @@ const Livedropes = () => {
   const [selectedRow, setSelectedRow] = useState(null);
   const [rowSelectionModel, setRowSelectionModel] = useState([]);
 
-  const { users } = useSelector((state) => state.users);
   const deleteForm = useForm();
 
   const columns = [
@@ -217,24 +209,7 @@ const Livedropes = () => {
               </p>
             </div>
 
-            {/* <Box gap={1} display="flex">
-              <Button
-                variant="contained"
-                color="error"
-                onClick={() => {
-                  setOpenDialog({ ...openDialog, delete: true });
-                }}
-                disabled={!rowSelectionModel.length}
-              >
-                Delete
-              </Button>
-              <Button
-                variant="contained"
-                onClick={() => navigate("/user/create")}
-              >
-                Create
-              </Button>
-            </Box> */}
+       
           </Box>
           <DataGrid
             sx={{ height: 600, width: "100%" }}
