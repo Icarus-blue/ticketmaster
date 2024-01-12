@@ -12,4 +12,4 @@ const io = new Server(serve, {
 
 module.exports = {
     app, serve, io
-}
+};
