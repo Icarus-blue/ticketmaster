@@ -14,6 +14,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import logo from '../../assets/img/logo_full.jpg';
 import background from '../../assets/img/background.jpg';
 import { MarginTwoTone } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 const Overview = () => {
   return (
@@ -28,7 +29,11 @@ const Overview = () => {
             gap: 1,
           }}
         >
-          <Typography variant="h4">www.ptdrop.com</Typography>
+          <Typography variant="h4" >
+            <Link style={{ color: 'white' }} to={`https://www.ptsdrop.com`}>
+              www.ptsdrop.com
+            </Link>
+          </Typography>
         </Box>
 
         <Box sx={{ display: "flex", justifyContent: "space-around", alignItems: "center", mt: 4 }}>
